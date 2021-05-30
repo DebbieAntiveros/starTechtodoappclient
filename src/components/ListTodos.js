@@ -20,7 +20,7 @@ const ListTodos = () => {
     console.log("delete all todos clicked");
     try {
       const deleteTodo = await fetch(
-        `http://localhost:5000/storedFunctionTodo/${loggedUser.user_id}`,
+        `https://startechtodoappserver.herokuapp.com/storedFunctionTodo/${loggedUser.user_id}`,
         {
           method: "DELETE",
         }
@@ -33,9 +33,12 @@ const ListTodos = () => {
 
   const deleteTodo = async (id) => {
     try {
-      const deleteTodo = await fetch(`http://localhost:5000/todos/${id}`, {
-        method: "DELETE",
-      });
+      const deleteTodo = await fetch(
+        `https://startechtodoappserver.herokuapp.com/todos/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       setTodos(todos.filter((todo) => deleteTodo.todo_id != todo.todo_id));
       window.location.reload();
     } catch (err) {
@@ -45,7 +48,9 @@ const ListTodos = () => {
   // get and fetch todos
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:5000/todos");
+      const response = await fetch(
+        "https://startechtodoappserver.herokuapp.com/todos"
+      );
       const jsonData = await response.json();
       setTodos(jsonData);
       setDisplayTodos(jsonData);
@@ -56,7 +61,9 @@ const ListTodos = () => {
 
   const getTodosWithUsers = async () => {
     try {
-      const response = await fetch("http://localhost:5000/joinTodo");
+      const response = await fetch(
+        "https://startechtodoappserver.herokuapp.com/joinTodo"
+      );
       const jsonData = await response.json();
       console.log("todo with user is: ", jsonData);
       setTodosWithUser(jsonData);

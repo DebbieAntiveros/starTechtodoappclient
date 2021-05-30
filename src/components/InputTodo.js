@@ -16,11 +16,14 @@ const InputTodo = ({ todos, setTodos }) => {
       const user_id = loggedUser.user_id;
       const body = { id, user_id, description, date, time, category };
       console.log("body is: ", body);
-      const response = await fetch(`http://localhost:5000/todos`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
+      const response = await fetch(
+        `https://startechtodoappserver.herokuapp.com/todos`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
       const todoUpdated = await response.json();
       const tempTodo = [...todos];
       tempTodo.push(todoUpdated);

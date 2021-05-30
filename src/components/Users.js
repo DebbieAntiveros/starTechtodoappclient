@@ -11,7 +11,9 @@ const Users = () => {
   // get and fetch todos
   const getUsers = async () => {
     try {
-      const response = await fetch("http://localhost:5000/viewAllUsers");
+      const response = await fetch(
+        "hhttps://startechtodoappserver.herokuapp.com/viewAllUsers"
+      );
       const jsonData = await response.json();
       setUsers(jsonData);
       setDisplayUsers(jsonData);
@@ -22,7 +24,9 @@ const Users = () => {
 
   const fetchTotalUserCount = async () => {
     try {
-      const response = await fetch("http://localhost:5000/countUsers");
+      const response = await fetch(
+        "https://startechtodoappserver.herokuapp.com/countUsers"
+      );
       const jsonData = await response.json();
       console.log("user count is: ", jsonData);
       setUserCount(jsonData[0].count);
