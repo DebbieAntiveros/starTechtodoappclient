@@ -78,11 +78,7 @@ const Login = ({}) => {
                       required
                     />
                   </div>
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    onClick={handleAuth}
-                  >
+                  <button type="submit" className="btn btn-primary">
                     Submit
                   </button>
                 </form>
