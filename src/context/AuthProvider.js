@@ -12,7 +12,7 @@ const AuthProvider = ({ children }) => {
       console.log(body);
       try {
         const userLogin = await fetch(
-          `http://startechtodoappclient.herokuapp.com/auth/login`,
+          `https://startechtodoappserver.herokuapp.com/`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

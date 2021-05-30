@@ -118,7 +118,11 @@ const Login = () => {
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary">
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={handleSubmit}
+                >
                   Submit
                 </button>
               </form>

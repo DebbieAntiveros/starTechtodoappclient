@@ -10,7 +10,7 @@ const EditTodo = ({ todo, setTodo }) => {
     try {
       const body = { description };
       const response = await fetch(
-        `http://startechtodoappserver.herokuapp.com/todos/${todo.todo_id}`,
+        `https://startechtodoappserver.herokuapp.com/todos/${todo.todo_id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
