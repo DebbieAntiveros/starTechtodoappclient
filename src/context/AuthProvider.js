@@ -11,11 +11,14 @@ const AuthProvider = ({ children }) => {
       const body = { email, password };
       console.log(body);
       try {
-        const userLogin = await fetch(`http://localhost:5000/auth/login`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        });
+        const userLogin = await fetch(
+          `http://startechtodoappclient.herokuapp.com/auth/login`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+          }
+        );
         const userData = await userLogin.json();
         const { status, message, data } = userData;
 
@@ -37,11 +40,14 @@ const AuthProvider = ({ children }) => {
       console.log("data is: ", data);
       const body = data;
       try {
-        const userLogin = await fetch(`http://localhost:5000/auth/register`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        });
+        const userLogin = await fetch(
+          `http://startechtodoappclient.herokuapp.com/auth/register`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+          }
+        );
         const userData = await userLogin.json();
         const { status, message, data } = userData;
         if (status == "success") {
