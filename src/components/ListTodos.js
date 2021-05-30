@@ -20,7 +20,7 @@ const ListTodos = () => {
     console.log("delete all todos clicked");
     try {
       const deleteTodo = await fetch(
-        `https://startechtodoappserver.herokuapp.com/storedFunctionTodo/${loggedUser.user_id}`,
+        `http://startechtodoappserver.herokuapp.com/storedFunctionTodo/${loggedUser.user_id}`,
         {
           method: "DELETE",
         }
@@ -34,7 +34,7 @@ const ListTodos = () => {
   const deleteTodo = async (id) => {
     try {
       const deleteTodo = await fetch(
-        `https://startechtodoappserver.herokuapp.com/todos/${id}`,
+        `http://startechtodoappserver.herokuapp.com/todos/${id}`,
         {
           method: "DELETE",
         }
@@ -49,7 +49,7 @@ const ListTodos = () => {
   const getTodos = async () => {
     try {
       const response = await fetch(
-        "https://startechtodoappserver.herokuapp.com/todos"
+        "http://startechtodoappserver.herokuapp.com/todos"
       );
       const jsonData = await response.json();
       setTodos(jsonData);
@@ -62,7 +62,7 @@ const ListTodos = () => {
   const getTodosWithUsers = async () => {
     try {
       const response = await fetch(
-        "https://startechtodoappserver.herokuapp.com/joinTodo"
+        "http://startechtodoappserver.herokuapp.com/joinTodo"
       );
       const jsonData = await response.json();
       console.log("todo with user is: ", jsonData);

@@ -17,7 +17,7 @@ const InputTodo = ({ todos, setTodos }) => {
       const body = { id, user_id, description, date, time, category };
       console.log("body is: ", body);
       const response = await fetch(
-        `https://startechtodoappserver.herokuapp.com/todos`,
+        `http://startechtodoappserver.herokuapp.com/todos`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
